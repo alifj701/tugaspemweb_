@@ -1,16 +1,14 @@
 <?php
-$db = 'localhost'; 
-$username = 'root'; 
-$password = ''; 
-$dbname = 'pemweb-db';
+
+$DBHOST = 'localhost';
+$DBUSER = 'root';
+$DBPASSWORD = '';
+$DBNAME = 'pemweb-db';
 $port = "3307"; 
 
-$db_connect = mysqli_connect($db, $username, $password, $dbname, $port);
+$db_connect = mysqli_connect($DBHOST,$DBUSER,$DBPASSWORD,$DBNAME,$port);
 
-if (!$db_connect) {
-    die("Connection failed: " . mysqli_connect_error());
+if(mysqli_connect_errno()){
+    echo "failed connect to mysql ".mysqli_connect_error(); 
 }
-?>
-
-
 
